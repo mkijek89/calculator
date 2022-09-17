@@ -35,18 +35,22 @@ const operate = function(a, operator, b){
 const display = document.getElementById('display');
 
 //Buttons
-
+let content = '';
 const printValue = function(a){
-    let content = '';
+    
 
     if(a != 'c' && a != '='){
         display.textContent += a;
         content += a;
+           if (a.includes('+') || a == ' - ' || a == ' / ' || a == ' * '){
+            display.textContent = a;
+           }
+           
+                        
     } else if (a == 'c') {
         display.textContent= '';
         content = '';
     }
-    
     
 }
 
@@ -62,14 +66,16 @@ btns.forEach(btn => {
 
 equalizer.addEventListener('click', function(){
     let result;
-    let arr = display.textContent.split(' ')
+    let arr = content.split(' ')
     arr = arr.join(" ").trim().split(' ');
     result = operate(parseInt(arr[0]),arr[1],parseInt(arr[2]));
     display.textContent = result;
+    content = result;
 })
+
+
 /* } else if (a == '=') {
     arr = content.split(' ');
     display.textContent = operate(arr[0],arr[1],arr[2]);
     console.log(arr);
 } */
-parseInt

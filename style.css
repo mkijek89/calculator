@@ -42,3 +42,7 @@ body {
     background-color: orange;
     color: white;
 }
+
+#logo {
+    width: 100px;
+}
