@@ -42,20 +42,6 @@ const operate = function(a, operator, b){
     }
 }
 
-
-/*const equalize = function(){
-    let result;
-    let arr = current.textContent.split(' ')
-    arr = arr.join(" ").trim().split(' ');
-    result = operate(arr[0],arr[1],arr[2]);
-    current.textContent = result;
-    result = result * 100000;
-    result = Math.round(result);
-    result = result / 100000;
-    
-    console.log(arr)
-} */
-
 const equalize = function(){
     let result;
     let arr = previous.textContent.split(' ');
@@ -69,10 +55,7 @@ const equalize = function(){
     
 }
 
-
-
 //Buttons
-
 
 
 const printValue = function(a){
@@ -114,7 +97,3 @@ btns.forEach(btn => {
 
 equalizer.addEventListener('click', equalize);
 
-/* TO DO
--fix pressing operator after one operator is already selected
--split to arr instead of string at the beginning of typing
-*/
